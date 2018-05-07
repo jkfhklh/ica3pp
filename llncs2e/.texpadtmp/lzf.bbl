@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{HUG}
+Chowdhury, M., Liu, Z., Ghodsi, A., Stoica, I.: {HUG}: Multi-resource fairness
+  for correlated and elastic demands. In: 13th {USENIX} Symposium on Networked
+  Systems Design and Implementation ({NSDI} 16). pp. 407--424. {USENIX}
+  Association, Santa Clara, CA (2016),
+  \url{https://www.usenix.org/conference/nsdi16/technical-sessions/presentation/chowdhury}
+
+\end{thebibliography}
