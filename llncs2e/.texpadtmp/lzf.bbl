@@ -3,11 +3,28 @@
 \providecommand{\urlprefix}{URL }
 \providecommand{\doi}[1]{https://doi.org/#1}
 
+\bibitem{Hadoop}
+Apache {Hadoop}, \url{http://hadoop.apache.org/}
+
 \bibitem{HUG}
 Chowdhury, M., Liu, Z., Ghodsi, A., Stoica, I.: {HUG}: Multi-resource fairness
   for correlated and elastic demands. In: 13th {USENIX} Symposium on Networked
   Systems Design and Implementation ({NSDI} 16). pp. 407--424. {USENIX}
   Association, Santa Clara, CA (2016),
   \url{https://www.usenix.org/conference/nsdi16/technical-sessions/presentation/chowdhury}
+
+\bibitem{MapReduce}
+Dean, J., Ghemawat, S.: Mapreduce: Simplified data processing on large
+  clusters. Commun. ACM  \textbf{51}(1),  107--113 (Jan 2008).
+  \doi{10.1145/1327452.1327492},
+  \url{http://doi.acm.org/10.1145/1327452.1327492}
+
+\bibitem{Spark}
+Zaharia, M., Chowdhury, M., Das, T., Dave, A., Ma, J., McCauley, M., Franklin,
+  M.J., Shenker, S., Stoica, I.: Resilient distributed datasets: A
+  fault-tolerant abstraction for in-memory cluster computing. In: Proceedings
+  of the 9th USENIX Conference on Networked Systems Design and Implementation.
+  pp.~2--2. NSDI'12, USENIX Association, Berkeley, CA, USA (2012),
+  \url{http://dl.acm.org/citation.cfm?id=2228298.2228301}
 
 \end{thebibliography}

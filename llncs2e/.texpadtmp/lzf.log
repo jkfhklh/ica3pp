@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  7 MAY 2018 23:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  16 MAY 2018 10:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -185,18 +185,48 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 File: fig1.eps Graphic file (type eps)
  <fig1.eps> [1
 
-] (/Users/white/Documents/GitHub/ica3pp/llncs2e/.texpadtmp/lzf.bbl) [2] (/Users/white/Documents/GitHub/ica3pp/llncs2e/.texpadtmp/lzf.aux)
+] (/Users/white/Documents/GitHub/ica3pp/llncs2e/.texpadtmp/lzf.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 17--21
+[]\OT1/cmr/m/n/9 Dean, J., Ghe-mawat, S.: Mapre-duce: Sim-pli-fied data pro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--21
+\OT1/cmr/m/n/9 cess-ing on large clus-ters. Com-mun. ACM \OT1/cmr/bx/n/9 51\OT1/cmr/m/n/9 (1), 107--
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--21
+\OT1/cmr/m/n/9 113 (Jan 2008). https://doi.org/10.1145/1327452.1327492,
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 23--29
+[]\OT1/cmr/m/n/9 Zaharia, M., Chowd-hury, M., Das, T., Dave, A., Ma, J., Mc-Cauley, M.,
+ []
+
+
+Underfull \hbox (badness 3029) in paragraph at lines 23--29
+\OT1/cmr/m/n/9 9th USENIX Con-fer-ence on Net-worked Sys-tems De-sign and Im-ple-men-ta-
+ []
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 23--29
+\OT1/cmr/m/n/9 tion. pp. 2--2. NSDI'12, USENIX As-so-ci-a-tion, Berke-ley, CA, USA (2012),
+ []
+
+) [2] (/Users/white/Documents/GitHub/ica3pp/llncs2e/.texpadtmp/lzf.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1043 strings out of 492650
- 13277 string characters out of 6129649
+ 1046 strings out of 492650
+ 13303 string characters out of 6129649
  82428 words of memory out of 5000000
- 4953 multiletter control sequences out of 15000+600000
+ 4956 multiletter control sequences out of 15000+600000
  8147 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,8n,21p,277b,253s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,21p,277b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/white/Documents/GitHub/ica3pp/llncs2e/.texpadtmp/lzf.dvi (2 pages, 5152 bytes).
+Output written on /Users/white/Documents/GitHub/ica3pp/llncs2e/.texpadtmp/lzf.dvi (2 pages, 6256 bytes).
