@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{bm}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -40,23 +41,21 @@ To simplify the discussion, key terms used in our model are summarized in Table~
 \begin{table}
 \caption{Key Terms and Descriptions}
 \begin{center}
-\begin{tabular}{l@{\quad}l}
+\begin{tabular}{|c|c|}
 \hline
 Terms & Description\\
-\hline\rule{0pt}{12pt}
-$S$ & The set of the points in device activity area.\\
-$DA$ & The set of device activity area, $DA = \left\{da_{1}, da_{2},\dots, da_{N}\right\}$.\\
-$da_{n}$ & The $n$--th device activity area.\\
-$MD$ & The set of mobile devices, $MD = \left\{md_{1}, md_{2},\dots, md_{M}\right\}$.\\
-$md_{n}$ & The set of mobile devices in $da_{n}, md_{n} = \left\{md_{n,1}, md_{n,2},\dots, md_{n,Z}\right\}$.\\
-$mp_{m}$ & The position $md_{m}, mp_{m} = \left(mpx_{m}, mpy_{m}\right)$.\\
-$cl_{n,i}$ & The $i$-th cloudlet in dan.\\
-$cp_{n,i}$ & The central position of $cl_{n,i}, cp_{n,i} = \left(cpx_{n,i}, cpy_{n,i}\right)$.\\
-$dc_{n,i}$ & The device collection of $cl_{n,i}$.\\
-$r_{n,i}$ & The coverage radius for $cl_{n,i}$.\\
-$IC_{n,i}$ & The indoor cloudlet coverage collection of $cl_{n,i}$.\\
-$\rho$ & The density threshold for cloudlet placement judgment.\\[2pt]
 \hline
+$M$ & The number of total jobs.\\
+\hline
+$N$ & The number of total coflows.\\
+\hline
+$K$ & The number of machines.\\
+\hline
+$\mathbf{C} = \left\{C^1,\dots,C^{2K}\right\}$ & Link capacity of datacenter network.\\
+\hline
+$\mathbf{F}_i = \left\{f_i^1,\dots,f_i^{2K}\right\}$ & Bytes of data that coflow-$i$ transfers.\\
+\hline
+$\mathbf{
 \end{tabular}
 \end{center}
 \end{table}

@@ -24,7 +24,8 @@
 \bibitem{HUG}
 M.~Chowdhury, Z.~Liu, A.~Ghodsi, and I.~Stoica, ``{HUG}: Multi-resource
   fairness for correlated and elastic demands,'' in \emph{Proc. {USENIX}
-  Symposium on Networked Systems Design and Implementation ({NSDI} 16)}, Santa
-  Clara, CA, Mar. 2016, pp. 407--424.
+  Symposium on Networked Systems Design and Implementation ({NSDI} 16)}.\hskip
+  1em plus 0.5em minus 0.4em\relax Santa Clara, CA: {USENIX} Association, Mar.
+  2016, pp. 407--424.
 
 \end{thebibliography}
