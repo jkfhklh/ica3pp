@@ -28,4 +28,25 @@ M.~Chowdhury, Z.~Liu, A.~Ghodsi, and I.~Stoica, ``{HUG}: Multi-resource
   1em plus 0.5em minus 0.4em\relax Santa Clara, CA: {USENIX} Association, Mar.
   2016, pp. 407--424.
 
+\bibitem{jupiter}
+A.~Singh, J.~Ong, A.~Agarwal, G.~Anderson, A.~Armistead, R.~Bannon, S.~Boving,
+  G.~Desai, B.~Felderman, P.~Germano \emph{et~al.}, ``Jupiter rising: A decade
+  of clos topologies and centralized control in google's datacenter network,''
+  in \emph{ACM SIGCOMM Computer Communication Review}, vol.~45, no.~4.\hskip
+  1em plus 0.5em minus 0.4em\relax ACM, 2015, pp. 183--197.
+
+\bibitem{varys}
+M.~Chowdhury, Y.~Zhong, and I.~Stoica, ``Efficient coflow scheduling with
+  varys,'' in \emph{ACM SIGCOMM Computer Communication Review}, vol.~44, no.~4,
+  2014, pp. 443--454.
+
+\bibitem{aalo}
+M.~Chowdhury and I.~Stoica, ``Efficient coflow scheduling without prior
+  knowledge,'' in \emph{ACM SIGCOMM Computer Communication Review}, vol.~45,
+  no.~4.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2015, pp. 393--406.
+
+\bibitem{bingchuan}
+B.~Tian, C.~Tian, H.~Dai, and B.~Wang, ``Scheduling coflows of multi-stage jobs
+  to minimize the total weighted job completion time.''
+
 \end{thebibliography}
