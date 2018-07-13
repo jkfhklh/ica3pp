@@ -3,7 +3,10 @@
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithm}
 \usepackage{algorithmic}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
@@ -12,7 +15,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Coflow Scheduling of Multi-stage Jobs with Isolation Gaurantee}
+\title{Coflow Scheduling of Multi-stage Jobs with Isolation guarantee}
 
 \author{Zifan Liu, Haipeng Dai and Wanchun Dou\\
 State Key Laboratory for Novel Software Technology, Nanjing University, Nanjing, Jiangsu, China\\
@@ -31,14 +34,11 @@ keyword, keyword, keyword
 \end{IEEEkeywords}
 
 \section{Introduction}
-This document is a model and instructions for \LaTeX.\cite{HUG}
+This document is a model and instructions for \LaTeX.
 Please observe the conference page limits.
 
 \section{Model and Objective}
-In this section, we describe the model of datacenter networks and coflow.
-
-\subsection{Model}
-To simplify the discussion, key terms used in our model are summarized in Table~1.
+In this section, we firstly delineate the model of datacenter networks and coflow and then discuss two objectives. To simplify the discussion, key terms used in our model are summarized in Table~1.
 \begin{table}
 \caption{Key Terms and Descriptions}
 \begin{center}
@@ -66,13 +66,14 @@ $\Gamma_m$ & Progress of job-$m$.\\
 \end{center}
 \end{table}
 
+\subsection{Model}
 Given the full bisection bandwidth, which has been well developed in modern datacenter\cite{jupiter}, we treat the datacenter network as a big no-blocking switch connecting $K$ machines. Each machine has one ingress port and one egress port, thus the whole fabric has $2K$ ports. In this simplified model, the edges are the only place for congestion. Hence we focus sorely on bandwidth of each port. In our analysis, all links are assumed of equal capacity normalized to one.
 
 The coflow abstraction presents the communication demand within two stages of parallel computing model. A coflow is composed of a collection of flows across a group of machines sharing a common performance requirement. The completion time of the latest flow defines the completion time of this coflow. In many data-parallel frameworks like MapReduce/Hadoop, the coflow properties, such as source, destination, amount of data transferred of each flow, are known as a priori\cite{varys, aalo, bingchuan}.
 
-Specifically, the coflow \emph{demand vector} $\mathbf{F}_i = \left\langle f_i^1,\dots,f_i^{2K}\right\rangle$ captures the data demand of coflow-$i$, where $f_i^k$ denotes the amount of data transferred on port $k$. Among all flows in coflow-$i$, we name the port with largest traffic bottleneck port. Let the data demand on this port be the \emph{bottleneck demand}, defined as $\overline{f_i}=\max\limits_{k} f_i^k$. To simplify our analysis, the \emph{correlation vector} $d_i = \left\langle d_i^1,\dots,d_i^{2K}\right\rangle$ is engaged to describe the demand correlation across ports, where $d_i^k$ is the normalized data demand on port $k$ by the bottleneck demand, i.e., $d_i^k = f_i^k/\overline{f_i}$. This vector indicates that for every byte coflow-$i$ sends on bottleneck port, at least $d_i^k$ bytes should be transferred on port $k$.
+Specifically, the coflow \emph{demand vector} $\mathbf{F}_i = \left\langle f_i^1,\dots,f_i^{2K}\right\rangle$ captures the data demand of coflow-$i$, where $f_i^k$ denotes the amount of data transferred on port $k$. Among all flows in coflow-$i$, we name the port with largest traffic bottleneck port. Let the data demand on this port be the \emph{bottleneck demand}, defined as $\overline{f_i}=\max_{k} f_i^k$. To simplify our analysis, the \emph{correlation vector} $d_i = \left\langle d_i^1,\dots,d_i^{2K}\right\rangle$ is engaged to describe the demand correlation across ports, where $d_i^k$ is the normalized data demand on port $k$ by the bottleneck demand, i.e., $d_i^k = f_i^k/\overline{f_i}$. This vector indicates that for every byte coflow-$i$ sends on bottleneck port, at least $d_i^k$ bytes should be transferred on port $k$.
  
-Coflows have elastic bandwidth demand on multiple ports, comparing with individual flows. Given the bandwidth allocation vector $a_i=\left\langle a_i^1,\dots,a_i^{2K}\right\rangle$, calculated by coflow scheduler given the demand vectors, the coflow progress is restricted by the worst-case port. Formally, \emph{progress} of coflow-$k$ is measured as the mininum demand-normalized allocation across ports, i.e.,
+Coflows have elastic bandwidth demand on multiple ports, comparing with individual flows. Given the bandwidth allocation vector $a_i=\left\langle a_i^1,\dots,a_i^{2K}\right\rangle$ calculated by coflow scheduler given the demand vectors, the coflow progress is restricted by the worst-case port. Formally, \emph{progress} of coflow-$i$ is measured as the mininum demand-normalized allocation across ports, i.e.,
  \begin{equation}
  	P_i = \min\limits_{i:d_i^k>0}\frac{a_i^k}{d_i^k}.
  \end{equation}
@@ -85,7 +86,28 @@ Assume a multi-stage job-$m$ is a collection of $N$ coflows, i.e., $\mathbf{J}_m
 Like above, progress of job-$m$ indicates the collectivity transmission satisfaction ratios of all coflows belonging to it, which has significant effect on the JCT of job-$m$.
 
 \subsection{Objective}
-Generally, 
+In common consensus\cite{coflow}, a coflow scheduler focuses primarily on two objectives, average CCT and isolation guarantee. Under the multi-stage coflow  scheduling problem, we should concern the average JCT instead.
+
+\begin{enumerate}
+	\item \emph{Average JCT}: To speed up data-parallel application completion time, as many jobs as possible should be finished in their fastest possible ways. Therefore minimizing the average JCT is settled as a critical objective for an efficient coflow scheduler.
+	\item \emph{Isolation Guarantee}: In a shared datacenter network, all tenants expect \emph{performance isolation guarantees}. Existing work has define such guarantee as the \emph{minimum progress} across coflows\cite{HUG}. For multi-stage jobs, we define the isolation guarantee as the minimum progress across jobs, i.e., $\min_m \Gamma_m$. To optimize the isolation guarantee, a coflow scheduler should look for an allocation to maximize the minimum progress.
+\end{enumerate}
+
+\textbf{Long-term isolation guarantee:}To be edited.
+
+\section{Algorithm and Analysis}
+In this section, a two-phase algorithm is presented for multi-stage coflow scheduling.
+
+\subsection{Coflow Sorting}
+\begin{algorithm}
+	\caption{Coflow Sorting Algorithm}
+	\begin{algorithmic}
+		\REQUIRE Data demand set of all coflows $F$.
+		\ENSURE An ordered queue of all coflows. 
+		
+	\end{algorithmic}
+\end{algorithm}
+
 
 \section*{Acknowledgment}
 

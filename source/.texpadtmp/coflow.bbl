@@ -21,13 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{HUG}
-M.~Chowdhury, Z.~Liu, A.~Ghodsi, and I.~Stoica, ``{HUG}: Multi-resource
-  fairness for correlated and elastic demands,'' in \emph{Proc. {USENIX}
-  Symposium on Networked Systems Design and Implementation ({NSDI} 16)}.\hskip
-  1em plus 0.5em minus 0.4em\relax Santa Clara, CA: {USENIX} Association, Mar.
-  2016, pp. 407--424.
-
 \bibitem{jupiter}
 A.~Singh, J.~Ong, A.~Agarwal, G.~Anderson, A.~Armistead, R.~Bannon, S.~Boving,
   G.~Desai, B.~Felderman, P.~Germano \emph{et~al.}, ``Jupiter rising: A decade
@@ -48,5 +41,17 @@ M.~Chowdhury and I.~Stoica, ``Efficient coflow scheduling without prior
 \bibitem{bingchuan}
 B.~Tian, C.~Tian, H.~Dai, and B.~Wang, ``Scheduling coflows of multi-stage jobs
   to minimize the total weighted job completion time.''
+
+\bibitem{coflow}
+M.~Chowdhury and I.~Stoica, ``Coflow:a networking abstraction for cluster
+  applications,'' in \emph{ACM Workshop on Hot Topics in Networks}, 2012, pp.
+  31--36.
+
+\bibitem{HUG}
+M.~Chowdhury, Z.~Liu, A.~Ghodsi, and I.~Stoica, ``{HUG}: Multi-resource
+  fairness for correlated and elastic demands,'' in \emph{Proc. {USENIX}
+  Symposium on Networked Systems Design and Implementation ({NSDI} 16)}.\hskip
+  1em plus 0.5em minus 0.4em\relax Santa Clara, CA: {USENIX} Association, Mar.
+  2016, pp. 407--424.
 
 \end{thebibliography}

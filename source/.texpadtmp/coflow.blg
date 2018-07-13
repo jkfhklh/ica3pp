@@ -16,45 +16,45 @@ Warning--empty journal in bingchuan
 Warning--empty year in bingchuan
 
 Done.
-You've used 5 entries,
+You've used 6 entries,
             4024 wiz_defined-function locations,
-            1222 strings with 18892 characters,
-and the built_in function-call counts, 4729 in all, are:
-= -- 345
-> -- 132
-< -- 42
-+ -- 72
-- -- 24
-* -- 252
-:= -- 657
-add.period$ -- 13
-call.type$ -- 5
-change.case$ -- 5
-chr.to.int$ -- 96
-cite$ -- 7
-duplicate$ -- 328
-empty$ -- 393
-format.name$ -- 29
-if$ -- 1089
+            1227 strings with 19001 characters,
+and the built_in function-call counts, 5481 in all, are:
+= -- 403
+> -- 146
+< -- 48
++ -- 80
+- -- 26
+* -- 285
+:= -- 764
+add.period$ -- 15
+call.type$ -- 6
+change.case$ -- 6
+chr.to.int$ -- 111
+cite$ -- 8
+duplicate$ -- 383
+empty$ -- 466
+format.name$ -- 32
+if$ -- 1270
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 64
-newline$ -- 38
-num.names$ -- 5
-pop$ -- 154
+int.to.str$ -- 6
+missing$ -- 73
+newline$ -- 41
+num.names$ -- 6
+pop$ -- 177
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 348
+skip$ -- 410
 stack$ -- 0
-substring$ -- 229
-swap$ -- 275
-text.length$ -- 10
+substring$ -- 265
+swap$ -- 316
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 5
+type$ -- 6
 warning$ -- 2
-while$ -- 21
-width$ -- 6
-write$ -- 70
+while$ -- 25
+width$ -- 7
+write$ -- 79
 (There were 2 warnings)
