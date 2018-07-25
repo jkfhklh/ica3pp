@@ -4,18 +4,22 @@
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithm}
-\usepackage{algorithmic}
+%\usepackage{algorithmic}
+\usepackage[noend]{algpseudocode}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
+%\usepackage{definition}
 \usepackage{graphicx}
+%\usepackage{amssymb}
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{bm}
+\newtheorem{definition}{Definition}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Coflow Scheduling of Multi-stage Jobs with Isolation guarantee}
+\title{Coflow Scheduling of Multi-stage Jobs with Isolation Guarantee}
 
 \author{Zifan Liu, Haipeng Dai and Wanchun Dou\\
 State Key Laboratory for Novel Software Technology, Nanjing University, Nanjing, Jiangsu, China\\
@@ -48,9 +52,11 @@ Terms & Description\\
 \hline
 $M$ & The number of total jobs.\\
 \hline
+$N$ & The number of total coflows.\\
+\hline
 $K$ & The number of machines.\\
 \hline
-$\mathbf{F}_i = \left\langle f_i^1,\dots,f_i^{2K}\right\rangle$ & Demand vector of coflow-$i$.\\
+$F_i = \left\langle f_i^1,\dots,f_i^{2K}\right\rangle$ & Demand vector of coflow-$i$.\\
 \hline
 $d_i = \left\langle d_i^1,\dots,d_i^{2K}\right\rangle$ & Correlation vector of coflow-$i$.\\
 \hline
@@ -71,17 +77,17 @@ Given the full bisection bandwidth, which has been well developed in modern data
 
 The coflow abstraction presents the communication demand within two stages of parallel computing model. A coflow is composed of a collection of flows across a group of machines sharing a common performance requirement. The completion time of the latest flow defines the completion time of this coflow. In many data-parallel frameworks like MapReduce/Hadoop, the coflow properties, such as source, destination, amount of data transferred of each flow, are known as a priori\cite{varys, aalo, bingchuan}.
 
-Specifically, the coflow \emph{demand vector} $\mathbf{F}_i = \left\langle f_i^1,\dots,f_i^{2K}\right\rangle$ captures the data demand of coflow-$i$, where $f_i^k$ denotes the amount of data transferred on port $k$. Among all flows in coflow-$i$, we name the port with largest traffic bottleneck port. Let the data demand on this port be the \emph{bottleneck demand}, defined as $\overline{f_i}=\max_{k} f_i^k$. To simplify our analysis, the \emph{correlation vector} $d_i = \left\langle d_i^1,\dots,d_i^{2K}\right\rangle$ is engaged to describe the demand correlation across ports, where $d_i^k$ is the normalized data demand on port $k$ by the bottleneck demand, i.e., $d_i^k = f_i^k/\overline{f_i}$. This vector indicates that for every byte coflow-$i$ sends on bottleneck port, at least $d_i^k$ bytes should be transferred on port $k$.
+Specifically, the coflow \emph{demand vector} $F_i = \left\langle f_i^1,\dots,f_i^{2K}\right\rangle$ captures the data demand of coflow-$i$, where $f_i^k$ denotes the amount of data transferred on port $k$. Additionally, $f_i^{hl}$ denotes a flow transferring data from port $h$ to port $l$. Among all flows in coflow-$i$, we name the port with largest traffic bottleneck port. Let the data demand on this port be the \emph{bottleneck demand}, defined as $\overline{f_i}=\max_{k} f_i^k$. To simplify our analysis, the \emph{correlation vector} $d_i = \left\langle d_i^1,\dots,d_i^{2K}\right\rangle$ is engaged to describe the demand correlation across ports, where $d_i^k$ is the normalized data demand on port $k$ by the bottleneck demand, i.e., $d_i^k = f_i^k/\overline{f_i}$. This vector indicates that for every byte coflow-$i$ sends on bottleneck port, at least $d_i^k$ bytes should be transferred on port $k$.
  
-Coflows have elastic bandwidth demand on multiple ports, comparing with individual flows. Given the bandwidth allocation vector $a_i=\left\langle a_i^1,\dots,a_i^{2K}\right\rangle$ calculated by coflow scheduler given the demand vectors, the coflow progress is restricted by the worst-case port. Formally, \emph{progress} of coflow-$i$ is measured as the mininum demand-normalized allocation across ports, i.e.,
+Coflows have elastic bandwidth demand on multiple ports, comparing with individual flows. Given the bandwidth allocation vector $a_i=\left\langle a_i^1,\dots,a_i^{2K}\right\rangle$ for each coflow-$i$ calculated by coflow scheduler given the demand vectors, the coflow progress is restricted by the worst-case port. Formally, \emph{progress} of coflow-$i$ is measured as the minimum demand-normalized rate allocation across ports, i.e.,
  \begin{equation}
  	P_i = \min\limits_{i:d_i^k>0}\frac{a_i^k}{d_i^k}.
  \end{equation}
  Intuitively, progress of coflow-$i$ means the transmission satisfaction ratio on the lowest port, which determines the CCT of coflow-$i$.
  
-Assume a multi-stage job-$m$ is a collection of $N$ coflows, i.e., $\mathbf{J}_m=\left\{c_{m,1},\dots,c_{m,N}\right\}$. Given the bottleneck demand and progress of each coflow, i.e., $\left\{P_{m,1},\dots,P_{m,N}\right\}$, the progress of job-$m$ can be computed as
+Assume a multi-stage job-$m$ is a collection of $N$ coflows, i.e., $J_m=\left\{c_{m,1},\dots,c_{m,N}\right\}$. Given the bottleneck demand and progress of each coflow, i.e., $\left\{P_{m,1},\dots,P_{m,N}\right\}$, the progress of job-$m$ can be computed as
 \begin{equation}
-	\Gamma_m = \frac{\sum_{n=1}^N \overline{f_{m,n}}P_{m,n}}{\sum_{n=1}^N d_{m,n}}.
+	\Gamma_m = \frac{\sum_{n=1}^N \overline{f_{m,n}}P_{m,n}}{\sum_{n=1}^N f_{m,n}}.
 \end{equation}
 Like above, progress of job-$m$ indicates the collectivity transmission satisfaction ratios of all coflows belonging to it, which has significant effect on the JCT of job-$m$.
 
@@ -90,23 +96,132 @@ In common consensus\cite{coflow}, a coflow scheduler focuses primarily on two ob
 
 \begin{enumerate}
 	\item \emph{Average JCT}: To speed up data-parallel application completion time, as many jobs as possible should be finished in their fastest possible ways. Therefore minimizing the average JCT is settled as a critical objective for an efficient coflow scheduler.
-	\item \emph{Isolation Guarantee}: In a shared datacenter network, all tenants expect \emph{performance isolation guarantees}. Existing work has define such guarantee as the \emph{minimum progress} across coflows\cite{HUG}. For multi-stage jobs, we define the isolation guarantee as the minimum progress across jobs, i.e., $\min_m \Gamma_m$. To optimize the isolation guarantee, a coflow scheduler should look for an allocation to maximize the minimum progress.
+	\item \emph{Isolation Guarantee}: In a shared datacenter network, all tenants expect \emph{performance isolation guarantees}. Existing work has define such guarantee as the \emph{minimum progress} across coflows\cite{HUG}, i.e., $\max_i P_i$. For multi-stage jobs, we define the isolation guarantee as the minimum progress across jobs, i.e., $\max_m \Gamma_m$. To optimize the isolation guarantee, a coflow scheduler should look for an allocation to maximize the minimum progress.
 \end{enumerate}
 
-\textbf{Long-term isolation guarantee:}To be edited.
+However, the coflow isolation guarantee concludes the real-time progress of active coflows, while the multi-stage job isolation guarantee needs the monolithic view of all coflows it consisting of. Thus we introduce the job \emph{long-term isolation guarantee} to our model.
+
+\textbf{Definition 1 (Long-term Isolation Guarantee):}Consider a multi-stage job-$i$, let $T_i$ be its JCT by coflow scheduler $S$. $T_i^*$ is its JCT by a fair scheduler which enforce a minimum instantaneous progress of all active coflows. We call the scheduler $S$ provides the job long-term isolation guarantee if all jobs complete no later than $T_i^* + D$, where $D$ is a constant delay, i.e.,
+\begin{equation}
+	T_i \leq T_i^* + D
+\end{equation}
+
+In this paper, our objective is to gain the best of both targets in a long run, which is formalized as
+\begin{equation}
+	\begin{aligned}
+		\text{minimize} & & &\sum\limits_{i}T_i\\
+		\text{s.t.} & & &T_i \leq T_i^* + D \text{, for all job-}i\\
+	\end{aligned}
+\end{equation}
 
 \section{Algorithm and Analysis}
-In this section, a two-phase algorithm is presented for multi-stage coflow scheduling.
+In this section, we designed a coflow scheduling algorithm of multi-stage jobs with isolation guarantee. We first elaborate how to sort coflows based on their priorities. Second we promote our bandwidth allocation algorithm.
 
 \subsection{Coflow Sorting}
+Before we allocate bandwidth to coflows, the priorities of each coflow should be determined. Consider all coflows are scheduled by the fair scheduler DRF, which enforces the equal progress across coflows\cite{DRF,HUG}. On account of the completion time of each coflow under such scheduling, we can obtain a priority order for all coflows. If a coflow completes faster in DRF scheduling, it has a higher priority than the lowers.
+
+However, directly performing DRF is not suitable in the context of multi-stage jobs, because some coflows that have dependencies are not released at the start. At first, we can only calculate the completion times of coflows $F'$ with no dependencies, which are released at time 0. Then, the minimum progress of these coflows $P^* = \min_iP'_i$ is produced. It is noticed that in popular parallel frameworks, the number of coflows in different stages stays similar\cite{Spark,coflowsurvey}. We assume that $P^*$ keeps across stages, then the completion time of coflow $F_i \notin F'$ is estimated as $t_i = P^*\overline{f_i}$.
+
+Besides, the completion time of single coflow is not necessarily the priority of the job containing it. In multi-stage jobs, coflow pipelines are developed using directed acyclic graph(DAG) pattern to show the dependencies between coflows. Setting the weights of coflows in DAG as their completion times, the completion time of job-$m$ is the maximum total weight along DAG routes of $J_m$. Like previous, if a job completes faster, it has a higher priority. Within a job, the priority order of coflows is the topological order, along with giving the faster coflows higher priority. Therefore we get a prioritized queue of all coflows $\mathbf{F} = (F_1,\dots,F_N)$. The entire procedure is summarized in Algorithm~1.
+
 \begin{algorithm}
 	\caption{Coflow Sorting Algorithm}
-	\begin{algorithmic}
-		\REQUIRE Data demand set of all coflows $F$.
-		\ENSURE An ordered queue of all coflows. 
-		
+	\begin{algorithmic}[1]
+		\Require Data demand set of all coflows $F$ and the job set $J$.
+		\Ensure An ordered queue of all coflows $\mathbf{F}$. 
+		\State $F' \gets $ coflows have no dependencies in $F$.
+		\State $P^* \gets$ the minimum progress of $F'$ under DRF.
+		\For{$i = 1 \to \left|F\right|$}
+			\If{$F_i \in F'$}
+				\State $t_i \gets$ the completion time of $F_i$ under DRF.
+			\Else
+				\State $t_i \gets P^*\overline{f_i}$.
+			\EndIf
+		\EndFor
+		\State $T_m \gets$ the maximum total time along DAG route of $J_m$.
+		\State Sort $J$ in the ascending order of $T$.
+		\State Initialize $F^*$ as an empty queue.
+		\For{$m = 1 \to \left|J\right|$}
+			\State Sort coflows $\overline{F_m} = \left\{F_i|F_i \in J_m\right\}$ in topological order of DAG.
+			\State $\mathbf{F} \gets \mathbf{F} + \overline{F_m}$
+		\EndFor
 	\end{algorithmic}
 \end{algorithm}
+
+\subsection{Bandwidth Allocation}
+After obtaining the prioritized queue of coflows, we can allocated bandwidth to the active coflows one by one. Specifically, we introduce the \emph{super-coflow} conception which was proposed in \cite{utopia} for our solution.
+
+\noindent \textbf{Super-coflow.} Given a queue of coflows $\mathbf{F}$, the super-coflow $S_i$ is defined as the sequential aggregation of the first $i$ coflows $F_1,\dots,F_i$. Formally, the demand vector $D_i = \langle D_i^1,\dots,D_i^{2K} \rangle$ of $S_i$ is the accumulation of the first $i$ coflows, i.e., $D_i = \sum_{j=1}^id_j$. Super-coflow $S_1$ trivially degrades into coflow $F_1$ as a special case.
+
+In previous works, coflows are mostly scheduled individually. We take the minimum-allocation-for-desired-duration (MADD) algorithm as an example\cite{varys}. Under MADD, the least amount of bandwidth was allocated to a coflow to obtain the maximum possible progress. Let $R_k$ be the remaining bandwidth on port $k$ and $d_i=\langle d_i^1,\dots,d_i^{2K}\rangle$ be the correlation vector of coflow-$i$. Thus the maximum possible progress $P'$ of coflow-$i$ can be calculated as
+\begin{equation}
+	P' = \min_{1\leq k \leq 2K}\frac{R_k}{d_i^k}.
+\end{equation}
+To acquiring the maximum possible progress, the bandwidth allocation of coflow-$i$ on port $k$ is at least $P'd_i^k$. Under MADD, the allocation is exactly $P'd_i^k$. However, MADD may lead to the priority inversion problem. If a coflow is not able to get any progress, then it gets no bandwidth, even if allocating it some bandwidth will accelerate its completion.
+
+On the contrary, our super-coflow conception eliminates the priority inversion situation as much as possible. When computing the bandwidth allocatio, coflow $F_i$ is justified if it contributes to super-coflow $S_i$. As long as $F_i$ affects the progress of $S_i$, a bandwidth allocation to $F_i$ is always guaranteed, even when it gains no progress alone, which easily triggers a priority inversion under MADD.
+
+Assume the active coflow priority queue is $F'=(F'_1,\dots,F'_{N'})$ and the super-coflow queue is $S = (S_1,\dots,S_{N'})$. Our bandwidth allocation algorithm runs in turns. In the $i$-th turn, we will allocate the least bandwidth to $F_i$, while the allocations of earlier turns stay unchanged,  in order to achieve the minimum possible completion time of $S_i$. To easily describe our algorithm, we next focus on the bandwidth allocation of $F_i$.
+
+To achieve the minimum possible completion time of $S_i$, we first calculate the bottleneck data demand of $S_i$, i.e.,
+\begin{equation}
+	\overline{D_i} = \max_{1\leq k\leq 2K}D_i^k.
+\end{equation}
+Let $D_i^{hl}$ be the data amount transferred from port $h$ to port $l$ in $S_i$. Then at least $D_i^{hl}/\overline{D_i}$ bandwidth should be allocated for the flows between port $h$ and port $l$. It is noted that the first $i-1$ coflows have received some bandwidth in the earlier turns. We denote the bandwidth received by flow $f_k^{hl}$ in coflow-$k$ as $u_k^{hl}$ for $k < i$, thus we can distribute at most $(D_i^{hl}/\overline{D_i} - \sum_{k=1}^{i-1}u_k^{hl})^+$ bandwidth to $f_i^{hl}$, where $(x)^+=\max(0,x)$. Given the remaining bandwidth $R_h$ on port $h$ and $R_l$ on port $l$, which limit the actual bandwidth available for $f_i^{hl}$, we finally get $u_i^{hl}$ as
+\begin{equation}
+	u_i^{hl} = \min\left[\left(D_i^{hl}/\overline{D_i} - \sum_{k=1}^{i-1}u_k^{hl}\right)^+,R_h,R_l\right].
+\end{equation}
+After then, the remaining bandwidth on these two ports are updated. When all turns have finished, unused bandwidth is distributed to coflows. For each ingress port $h$, remaining bandwidth $R_h$ are distributed to corresponding flows according to ratio of their current received bandwidth $u_i^{hl}$, restricted by the corresponding egress port $l$. We summarize the whole procedure as $\mathsf{SuperflowAllocation}(F)$ in Algorithm~2.
+%\begin{theorem}[Super-coflow]
+%	Given a queue of coflows $\mathbf{F}$, the super-coflow $S_i$ is defined as the aggregation of the first $i$ coflows. Formally, the demand vector $D_i = \langle D_1,\dots,D_{2K} \rangle$ of $S_i$ 
+%\end{theorem}
+%\begin{itemize}
+%	\item \textbf{Super-coflow}
+%\end{itemize}
+
+\begin{algorithm}
+	\caption{Bandwidth Allocation Algorithm}
+	\begin{algorithmic}[1]
+		\Procedure{SuperflowAllocation}{Coflows $F$}
+			\State Initialize unused bandwidth $R_k \gets 1$ on port-$k$
+			\For{$i = 1 \to \left|F\right|$}
+				\State Assemble demands $D_i = \sum_{k=1}^id_k$.
+				\State $\overline{D_i} \gets \max_kD_i^k$
+				\ForAll{flow $f_i^{hl} \in F_i$}
+					\State $u_i^{hl} \gets \min[(D_i^{hl}/\overline{D_i} - \sum_{k=1}^{i-1}u_k^{hl})^+, R_h,R_l]$.
+					\State $R_h \gets R_h - u_i^{hl}$.
+					\State $R_l \gets R_l - u_i^{hl}$.
+				\EndFor
+			\EndFor
+			\State Allocate remaining bandwidth to coflows in the order of $F$ by FIFO.
+		\EndProcedure
+		\Procedure{BandwidthAllocation}{Coflows $F$}
+			\State $\mathbf{F} \gets$ sorted $F$ by Algorithm~1.
+			\State Initialize active coflows $F' \gets \emptyset$.
+			\While{True}
+				\State $F' \gets$ released coflows in the order of $\mathbf{F}$.
+				\If{$F'$ is changed}
+					\State Update remaining transfer demand of $F'$.
+					\State SuperflowAllocation($F'$).
+				\EndIf
+				\If{$F' == \emptyset$}
+					\State \textbf{break}.
+				\EndIf
+			\EndWhile
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+When an old coflow is finished or a new coflow is released, the active coflow set $F'$ is changed and the bandwidth allocations will be rescheduled. All the active coflows are sorted as the order we get by Algorithm~1 to maintain the priorities of all jobs through our scheduling. The main procedure is summarized as $\mathsf{BandwidthAllocation}(F)$ in Algorithm~2.
+
+\subsection{Long-term Isolation Guarantee}
+Our algorithm provides the job long-term isolation guarantee of Definition~1. For each job-$i$, the completion time $T_i$ is guaranteed not to exceed a constant time over its completion time in DRF. We formalize this theorem as following:
+
+\textbf{Theorem 1 (Long-term Isolation Guarantee):}Assume that jobs $J$ are released at time 0. For all job $J_i \in J$, let $T_i$ be the JCT of $J_i$ in Algorithm~2, and let $T_i^*$ be the completion time of $J_i$ in DRF. The completion time delay is bounded as
+\begin{equation}
+	T_i - T_i^* \leq .
+\end{equation}
+
 
 
 \section*{Acknowledgment}
