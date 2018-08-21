@@ -48,6 +48,16 @@ M.~Chowdhury and I.~Stoica, ``Coflow:a networking abstraction for cluster
   applications,'' in \emph{ACM Workshop on Hot Topics in Networks}, 2012, pp.
   31--36.
 
+\bibitem{coflex}
+W.~Wang, S.~Ma, B.~Li, and B.~Li, ``Coflex: Navigating the fairness-efficiency
+  tradeoff for coflow scheduling,'' in \emph{INFOCOM 2017-IEEE Conference on
+  Computer Communications, IEEE}, 2017, pp. 1--9.
+
+\bibitem{utopia}
+B.~Li, L.~Wang, and W.~Wang, ``Utopia: Near-optimal coflow scheduling with
+  isolation guarantee,'' in \emph{INFOCOM 2018-IEEE Conference on Computer
+  Communications, IEEE}, 2018.
+
 \bibitem{HUG}
 M.~Chowdhury, Z.~Liu, A.~Ghodsi, and I.~Stoica, ``{HUG}: Multi-resource
   fairness for correlated and elastic demands,'' in \emph{Proc. {USENIX}
@@ -72,9 +82,9 @@ S.~Wang, J.~Zhang, T.~Huang, J.~Liu, T.~Pan, and Y.~Liu, ``A survey of coflow
   scheduling schemes for data center networks,'' \emph{IEEE Communications
   Magazine}, 2018.
 
-\bibitem{utopia}
-B.~Li, L.~Wang, and W.~Wang, ``Utopia: Near-optimal coflow scheduling with
-  isolation guarantee,'' in \emph{INFOCOM 2018-IEEE Conference on Computer
-  Communications, IEEE}, 2018.
+\bibitem{orchestra}
+M.~Chowdhury, M.~Zaharia, J.~Ma, M.~I. Jordan, and I.~Stoica, ``Managing data
+  transfers in computer clusters with orchestra,'' \emph{ACM SIGCOMM Computer
+  Communication Review}, vol.~41, no.~4, pp. 98--109, 2011.
 
 \end{thebibliography}
