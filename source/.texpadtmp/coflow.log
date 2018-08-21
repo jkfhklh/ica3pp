@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  22 AUG 2018 02:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  22 AUG 2018 02:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -458,10 +458,7 @@ Underfull \hbox (badness 6396) in paragraph at lines 176--177
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F[]; [] ; F[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 and the super-coflow queue is $\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 =
  []
 
-
-Underfull \vbox (badness 1163) has occurred while \output is active []
-
- [3] [4]
+[3] [4]
 Underfull \hbox (badness 7504) in paragraph at lines 308--309
 []\OT1/ptm/m/it/10 Sub-Case 2 \OT1/ptm/m/n/10 The bot-tle-neck port of $\OML/cmm/m/it/10 S[]$ \OT1/ptm/m/it/10 shifts \OT1/ptm/m/n/10 to
  []
@@ -483,18 +480,14 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5] (/Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[5] (/Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.aux) ) 
 Here is how much of TeX's memory you used:
  4172 strings out of 492650
  59504 string characters out of 6129649
- 134711 words of memory out of 5000000
+ 136711 words of memory out of 5000000
  8000 multiletter control sequences out of 15000+600000
  39297 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  27i,12n,35p,1008b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.dvi (5 pages, 45320 bytes).
+Output written on /Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.dvi (5 pages, 45316 bytes).
