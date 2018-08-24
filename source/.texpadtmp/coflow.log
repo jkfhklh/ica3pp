@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  22 AUG 2018 02:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  25 AUG 2018 00:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -428,47 +428,52 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
+ [1
 
-Underfull \hbox (badness 2735) in paragraph at lines 87--88
+
+] [2]
+Underfull \hbox (badness 2735) in paragraph at lines 114--115
 []\OT1/ptm/m/n/10 Assume a multi-stage job-$\OML/cmm/m/it/10 m$ \OT1/ptm/m/n/10 has $\OML/cmm/m/it/10 N$ \OT1/ptm/m/n/10 ac-tive coflows,
  []
 
 
-Underfull \hbox (badness 7468) in paragraph at lines 87--88
+Underfull \hbox (badness 7468) in paragraph at lines 114--115
 \OT1/ptm/m/n/10 i.e., $[]$. Given the bot-tle-neck de-mand
  []
 
-[1
-
-
-] [2]
+[3]
 File: motivative.eps Graphic file (type eps)
  <motivative.eps>
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 169--170
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 196--197
  [][] 
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 176--177
+Underfull \hbox (badness 2913) in paragraph at lines 203--204
 []\OT1/ptm/m/n/10 Assume the ac-tive coflow pri-or-ity queue is $\OML/cmm/m/it/10 F[] \OT1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 6396) in paragraph at lines 176--177
+Underfull \hbox (badness 6396) in paragraph at lines 203--204
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F[]; [] ; F[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 and the super-coflow queue is $\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 =
  []
 
-[3] [4]
-Underfull \hbox (badness 7504) in paragraph at lines 308--309
+[4] [5]
+Underfull \hbox (badness 7504) in paragraph at lines 335--336
 []\OT1/ptm/m/it/10 Sub-Case 2 \OT1/ptm/m/n/10 The bot-tle-neck port of $\OML/cmm/m/it/10 S[]$ \OT1/ptm/m/it/10 shifts \OT1/ptm/m/n/10 to
  []
 
 
-Overfull \hbox (0.50174pt too wide) detected at line 315
+Overfull \hbox (0.50174pt too wide) detected at line 342
 [][]
  []
 
-(/Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.bbl)
+[6] (/Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 137--140
+[]\OT1/ptm/m/n/8 ``Coflow-benchmark.'' [On-line]. Avail-able:
+ []
+
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -480,14 +485,14 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5] (/Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.aux) ) 
+[7] (/Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.aux) ) 
 Here is how much of TeX's memory you used:
- 4172 strings out of 492650
- 59504 string characters out of 6129649
+ 4183 strings out of 492650
+ 59604 string characters out of 6129649
  136711 words of memory out of 5000000
- 8000 multiletter control sequences out of 15000+600000
+ 8011 multiletter control sequences out of 15000+600000
  39297 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,12n,35p,1008b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,12n,35p,1323b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.dvi (5 pages, 45316 bytes).
+Output written on /Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.dvi (7 pages, 64976 bytes).

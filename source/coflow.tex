@@ -38,7 +38,30 @@ keyword, keyword, keyword
 \end{IEEEkeywords}
 
 \section{Introduction}
+Data-parallel frameworks, such as MapReduce\cite{MapReduce}, Hadoop\cite{Hadoop} and Spark\cite{Spark}, are widely deployed in modern datacenters. Various distributed computing jobs (e.g., data mining or querying) are run by these frameworks, in which intermediate data are transferred between a group of machines. For example, a MapReduce job distributes mapper tasks and reducer tasks on two sets of machines (not necessarily be disjoint) determined by a master process. Each mapper task reads input data from local disk or network and produce intermediate key/value pairs. Each reducer task accepts a set of keys and values for those keys, merges values together and writes the final output data to local files. The intermediate data needs to transfer from mapper machines to reducer machines, which is called as \emph{shuffle} phase. These flows are reported may account for over 50\% of job completion time, which has an significant impact on job performance.
 
+The \emph{coflow} abstraction was proposed to help improve shuffle performance. A coflow means a collection of parallel flows\cite{coflow}. In the MapReduce case, flows in one \emph{shuffle} phase are termed a coflow. Traditional network performance measurements, such as average flow-completion-time (FCT), neglect application-level communication pattern of data-parallel jobs. Not until all parallel flows have finish transmission will the MapReduce shuffle phase complete, thus only the slowest flow (not the average FCT) in a coflow dominates the start time of reducer tasks. Hence, for the job-completion-time (JCT) improvement, the optimization scheduling framework should schedule flows in coflow level rather than flow level. Many recent work focus on achieving optimal performance, e.g., minimizing average coflow-completion-time\cite{varys,aalo,coda,barrat,stream}. In the meantime, many network schedulers settle for fair network sharing to offer optimal isolation among coflows\cite{HUG,DRF,faircloud,fair}.
+
+However, achieving both targets above is challenging in the multi-stage job scenario. First, for jobs containing only one shuffle phase, since there is only one coflow in a job, minimizing average CCT usually leads to faster jobs. However for the multi-stage jobs, minimizing average CCT not always results in faster jobs because the dependencies in a job should be considered about. Tian \emph{et al.}\cite{bingchuan} have taken the first step on minimizing multi-stage job-completion-time, but does not give concern to isolation of jobs. Second, schedulers providing optimal isolation usually allocate fair share network bandwidth to all coflows, giving the completion of coflows predictable CCTs. However, fair scheduling has been found short of coflow performance (i.e., minimizing average CCT)\cite{HUG}. Performance and fairness have been considered as conflict objective for long time. Wang \emph{et al.}\cite{utopia} have made an attempt for achieving both objective, but does not consider about the context of multi-stage jobs.
+
+In the context multi-stage jobs, We call coflow $C_2$ is dependent on another coflow $C_1$ if the computation stage of $C_1$ is the producer of $C_2$. There are two types of dependencies: \emph{Start-After} and \emph{Finishes-Before}. \emph{Start-After} indicates the entity of explicit barriers\cite{Hadoop}, which means coflow $C_2$ cannot start before coflow $C_1$ completes. \emph{Finishes-Before} means coflow $C_2$ can coexist with coflow $C_1$ but cannot complete until $C_1$ has completed, which is common for the pipeline of continuing stages\cite{dryad}. We focus on scheduling jobs with \emph{Start-After} type dependencies in the rest parts of this paper, and leave the \emph{Finishes-Before} dependencies to future work.
+
+In this paper, we aimed at addressing the challenge of achieving the best of both world of optimal performance and isolation guarantee in the context of multi-stage jobs while making the following contributions. 
+
+First, to our best knowledge, this is the first work for the studies: \emph{how to schedule dependent coflows of multi-stage jobs to provide long-term isolation guarantee will still minimizing the average JCT to ensure near-optimal performance}(Section II).
+
+Second, We present a formal mathematical formulation for this probelm (Section III) and propose a novel coflow scheduler for multi-stage jobs (Section IV). The key idea of our approach is to allocate bandwidth to coflows in the priority order depending on the completion times under fair schedulers (e.g., DRF\cite{DRF} or HUG\cite{HUG}). We find this idea can led to the best of both world for two reasons. First, since fair schedulers offer coflows the same progress, small coflows seem to complete faster than large ones. Like performance optimal schedulers, such as Varys\cite{varys}, small coflows have higher priority than large ones to minimize the average CCT. Second, isolation serve can only be observed by applications when coflow completes. our approach tends to complete coflows earlier than them would have in a fair scheduler, thus a \emph{long-term isolation guarantee} is provided to applications. To deal with the multi-stage jobs, we will set the priorities in two level: \emph{inter-job priority} and \emph{intra-job priority}. \emph{Inter-job priority} means the faster a job completes in a fair scheduler, the higher priority it is given. \emph{Intra-job priority} means within a job, earlier completed coflows in a fair scheduler have higher priority than the later ones.
+
+(evaluation related parts to be completed later!!!!)
+
+\section{Related Work}
+Existing work mostly focus on scheduling coflows in single-stage jobs. These schedulers usually settle on one goal (performance or isolation) as the primary objective, while ignoring or treating the other as a secondary objective. We will discuss these schedulers in the aspects primary objectives.
+
+\noindent\textbf{Performance-optimal:} many schedulers focus on minimizing average CCT. Orchestra\cite{orchestra} first presents the coflow abstraction and shows that even a simple FIFO algorithm can significantly improve coflow performance. Varys\cite{varys} uses the \emph{smallest-effective-bottleneck-first} (SEBF) heuristic to sort coflows and the \emph{minimum-allocation-for-desired- duration} (MADD) heuristic to preferentially allocate least bandwidth to coflows for minimizing average CCT and deadline missing rate. CODA\cite{coda} aims at scheduling information-agnostic coflows by automatically collecting coflow information. Barrat\cite{barrat} and Stream\cite{stream} focus on decentralized coflow scheduling. These schedulers cannot handle the dependencies and minimize average JCT for multi-stage jobs. The only schedulers that take multi-stage jobs for concern is Aalo\cite{aalo} and an approximation algorithm presented by Tian \emph{et al.}\cite{bingchuan}. Aalo uses only one short section to discuss a simple heuristic for minimizing average JCT. Tian's algorithm cannot guarantee isolation between jobs.
+
+\noindent\textbf{Isolation-optimal:} There are also some schedulers aimed at providing isolation guarantee to coflows. HUG\cite{HUG} seeks a Dominant Resource Fairness (DRF)\cite{DRF} to allocate fair share of bandwidth to coflows. Chen \emph{et al.}\cite{optimizing} assume coflows have respective utility fuctions and develops a approximation algorithm to resolve the optimal max-min fairness problem. NC-DRF\cite{fair} provides isolation guarantee to non-clairvoyant coflows with the coflow correlation information. These schedulers result in longer average CCT thus fail to provide near-optimal performance.
+
+\noindent\textbf{Both two objectives:} Coflex\cite{coflex} and Utopia\cite{utopia} are the only two schedulers that consider both two objectives with the same importance. Coflex is proposed as a middle ground between Varys and HUG, by navigating the tradeoff space between performance and isolation with a elastic \emph{fairness knob} in the range of 0 to 1. However such knob is hard to determined in real-world systems. Utopia uses super-coflow scheduling to provide isolation guarantee with near-optimal performance, but cannot handle the context of multi-stage jobs.
 
 \section{Model and Objective}
 In this section, we firstly delineate the model of datacenter networks and coflow and then discuss two objectives. To simplify the discussion, key terms used in our model are summarized in Table~1.
@@ -65,7 +88,11 @@ $\overline{f_i}=\max_{k} f_i^k$ & Bottleneck demand of coflow-$i$.\\
 \hline
 $P_i$ & Progress of coflow-$i$.\\
 \hline
-$\Gamma_m$ & Progress of job-$m$.\\
+$\Gamma_i$ & Progress of job-$i$.\\
+\hline
+$T_i$ & JCT of job-$i$.\\
+\hline
+$T_i^*$ & JCT of job-$i$ under a fair scheduler.\\
 \hline
 \end{tabular}
 \end{center}
@@ -74,7 +101,7 @@ $\Gamma_m$ & Progress of job-$m$.\\
 \subsection{Model}
 Given the full bisection bandwidth, which has been well developed in modern datacenter\cite{jupiter}, we treat the datacenter network as a big non-blocking switch connecting $K$ machines. Each machine has one uplink port and one downlink port, thus the whole fabric has $2K$ ports. In this simplified model, the ports are the only congestion points. Hence we focus sorely on bandwidth of each port. In our analysis, all links are assumed of equal capacity normalized to one.
 
-The coflow abstraction presents the communication demand within stages of parallel computing model. A coflow is composed of a collection of flows across a group of machines sharing a common performance requirement. The completion time of the latest flow defines the completion time of this coflow. In many data-parallel frameworks like MapReduce/Hadoop, the coflow properties, such as source, destination, amount of data transferred of each flow, are known as a priori\cite{varys, aalo, bingchuan}.
+The coflow abstraction presents the communication demand between stages of parallel computing model. A coflow is composed of a collection of flows across a group of machines sharing a common performance requirement. The completion time of the latest flow defines the completion time of this coflow. In many data-parallel frameworks like MapReduce/Hadoop, the job and coflow properties, such as source, destination, amount of data transferred of each flow, coflow dependencies are known as a priori\cite{varys, aalo, bingchuan}. In this paper, we assume all jobs are released at time 0 and all coflows with no dependencies start at time 0 too.
 
 Specifically, the coflow \emph{demand vector} $F_i = \left\langle f_i^1,\dots,f_i^{2K}\right\rangle$ captures the data demand of coflow-$i$, where $f_i^k$ denotes the amount of data transferred on port $k$. Additionally, $f_i^{hl}$ denotes a flow transferring data from port $h$ to port $l$. Among all flows in coflow-$i$, we name the port with the largest traffic as bottleneck port. Let the data demand on this port be the \emph{bottleneck demand}, defined as $\overline{f_i}=\max_{k} f_i^k$. To simplify our analysis, the \emph{correlation vector} $d_i = \left\langle d_i^1,\dots,d_i^{2K}\right\rangle$ is engaged to describe the demand correlation across ports, where $d_i^k$ is the normalized data demand on port $k$ by the bottleneck demand, i.e., $d_i^k = f_i^k/\overline{f_i}$. This vector indicates that for every byte coflow-$i$ sends on bottleneck port, at least $d_i^k$ bytes should be transferred on port $k$.
  
@@ -123,7 +150,7 @@ However, directly performing DRF is not suitable in the context of multi-stage j
 
 we assume the job $J_i$ is the $i$-th job to complete data transferring, i.e., when $J_i$ completes, $J_1,\dots,J_{i-1}$ have already completed. Let $(F_{i,1},\dots,F_{i,N_i})$ be the coflows constituting job $J_i$ in the topological order and let super-coflow $S_{i,j}$ be the bonding super-coflow of $F_{i,j}$ when it finishes. To simplify our explanation, 
 
-Besides, the completion time of single coflow is not necessarily the priority of the job containing it. In multi-stage jobs, coflow pipelines are developed using directed acyclic graph(DAG) pattern to show the dependencies between coflows. In job-$i$, we set the weights of coflows in DAG as their completion times. Then we can get the \emph{estimate completion time} of coflow-$j$ $F_{i,j}$ as the maximum total weight along DAG edges from roots. A coflow with shorter estimate completion time has a higher priority. Additionally, the estimate completion time of job-$m$ is the maximum estimate completion time of all coflows it contains. Like previous, if a job completes faster, it has a higher priority. Within a job, the priority order of coflows is the ascending order of estimate completion tiome. Therefore we get a prioritized queue of all coflows $\mathbf{F} = (F_{1,1},\dots,F_{1,N_1},\dots,F_{M,1},\dots,F_{M,N_M})$. The entire procedure is summarized in Algorithm~1.
+Besides, the completion time of single coflow is not necessarily the priority of the job containing it. In multi-stage jobs, coflow pipelines are developed using directed acyclic graph (DAG) pattern to show the dependencies between coflows. In job-$i$, we set the weights of coflows in DAG as their completion times. Then we can get the \emph{estimate completion time} of coflow-$j$ $F_{i,j}$ as the maximum total weight along DAG edges from roots. A coflow with shorter estimate completion time has a higher priority. Additionally, the estimate completion time of job-$m$ is the maximum estimate completion time of all coflows it contains. Like previous, if a job completes faster, it has a higher priority. Within a job, the priority order of coflows is the ascending order of estimate completion tiome. Therefore we get a prioritized queue of all coflows $\mathbf{F} = (F_{1,1},\dots,F_{1,N_1},\dots,F_{M,1},\dots,F_{M,N_M})$. The entire procedure is summarized in Algorithm~1.
 
 \begin{algorithm}
 	\caption{Coflow Sorting Algorithm}
@@ -163,11 +190,11 @@ In previous works, coflows are mostly scheduled individually. We take the minimu
 \end{equation}
 To acquiring the maximum possible progress, the bandwidth allocation of coflow-$i$ on port $k$ is at least $P'd_i^k$. Under MADD, the allocation is exactly $P'd_i^k$. 
 
-However, MADD may lead to the priority inversion problem. If a coflow is not able to get any progress, then it gets no bandwidth, even if allocating it some bandwidth will accelerate its completion.
+However, MADD may lead to the priority inversion problem. If a coflow is not able to get any progress, then it gets no bandwidth, even if allocating it some bandwidth will accelerate its completion. To further explain priority inversion, we consider a motivation example in Fig.~\ref{motivative}. Three coflows($A$, $B$ and $C$) transfer data through three ports whose bandwidths are uniformed to 1. Coflow-$A$ has demand vector $F_A=\langle 3,0,0\rangle$; coflow-$B$ has demand vector $F_B=\langle 1,4,2\rangle$; coflow-$C$ has demand vector $F_C=\langle 0,6,5\rangle$. Since coflow-$A$ has the smallest bottleneck demand 3, it has higher priority than others, followed by coflow-$B$. The priority order of three coflows is $A > B > C$. Fig.~\ref{motivative}a shows the bandwidth allocation under MADD scheme. At time 0, coflow-$B$ cannot get any bandwidth on port 1, i.e., it can get no progress, so no bandwidth is allocated to coflow-$B$ but to coflow-$C$ on port 2 and 3. Coflow-$B$ is preempted by coflow-$C$, whereas in a optimal scheme, coflow-$B$ still should gain bandwidth on port 2 and 3 as shown in Fig.~\ref{motivative}b.
 
 \begin{figure}
 	\centering\includegraphics[width=3.5in]{motivative.eps}
-	\caption{}\label{motivative}
+	\caption{Priority inversion under MADD. Coflows transfer data through three ports whose bandwidths are uniformed to 1. Three coflows have the demand vectors $F_A=\langle 3,0,0\rangle$, $F_B=\langle 1,4,2\rangle$, $F_C=\langle 0,6,5\rangle$. The priority order of three coflows is $A > B > C$.}\label{motivative}
 \end{figure}
 
 
@@ -322,6 +349,24 @@ By combining Eq.(\ref{sc:1-3}), similar to the previous analysis, we finally tra
 	\end{aligned}
 \end{equation}
 \end{IEEEproof}
+
+\section{Evaluation}
+\subsection{Methology}
+\noindent\textbf{Simulator:} We develop an event-based flow simulator to evaluate our scheduler. Since there is no prior work focusing on both of minimizing average JCT and guaranteeing isolation of coflows in multi-stage jobs, we compare our algorithm with three coflow scheduling schemes: HUG\cite{HUG}, Aalo\cite{aalo} and Utopia\cite{utopia}. HUG is the isolation-optimal scheme that enforce same progress among coflows. Aalo is a performance-optimal scheme that considers the context of multi-stage jobs. Utopia can provide the near-optimal performance with isolation guarantee but it cannot handle the multi-stage coflows.
+
+\noindent\textbf{workload:} We take the realistic coflow traces\cite{benchmark} synthesized from real-world MapReduce workloads collected from a 3000-machine, 150-rack Facebook cluster, which are widely used as a benchmark for coflow scheduling analysis\cite{varys,aalo,minimizing,fair} . Specifically, all mappers (reducers) in the same rack are combined to one mapper (reducer). However, the original trace data captures single-stage coflows and is incomplete that the transmitted bytes are recorded in reducer-level instead of flow-level, thus we apply two transformations to these traces. First, we partition the bytes of each reducer pseudo-randomly to each mappers. Second, we combine these coflows randomly into jobs that each job is expected to have $\beta$ coflows. Dependencies between coflows within a job are also randomly generated.
+
+\noindent\textbf{Setup:} We set that there exists $\alpha$ machines in this virtual network. The datacenter fabric is abstracted as a $\alpha \times \alpha$ non-blocking switch. Each ingress (egress) port is connected with a uplink (downlink) port of a machine with 1 Gbps bandwidth. Therefore, the total available bandwidth in this fabric is $2\alpha$ Gbps.
+
+\subsection{isolation guarantee}
+In the Theorem~1 we have shown the delay bound of JCTs with our scheduler. Now we evaluate long-term isolation guarantee of our scheduler with other schedulers which guarantee isolation among coflows. Specifically, we compared our scheduler with two schedulers, HUG and Utopia, and use a metric called \emph{nornalized JCT} through the evaluation. Normalized JCT is defined, for each job, as the JCT of compared scheduler normalized by that under our scheduler, i.e.,
+\[\text{Normalized JCT} = \frac{\text{Compared JCT}}{\text{JCT under our scheduler}}.\]
+Intuitively, the lagerer the normalized JCT, the slower jobs will complete under the compared scheduler. If the normalized JCT is larger (smaller) than 1, the job completes faster (slower) in our scheduler.
+
+\subsection{Performance}
+We next evaluate the performance (i.e., average JCT) of our scheduler with other baseline schedulers.
+
+\[\text{Job slowdown} = \frac{\text{Compared JCT}}{\text{Minimum JCT if running alone}}.\]
 
 \section*{Acknowledgment}
 
