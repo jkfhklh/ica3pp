@@ -34,8 +34,8 @@ J.~Dean and S.~Ghemawat, ``Mapreduce: Simplified data processing on large
 M.~Zaharia, M.~Chowdhury, T.~Das, A.~Dave, J.~Ma, M.~McCauley, M.~J. Franklin,
   S.~Shenker, and I.~Stoica, ``Resilient distributed datasets: A fault-tolerant
   abstraction for in-memory cluster computing,'' in \emph{Proceedings of the
-  9th USENIX Conference on Networked Systems Design and Implementation},
-  Berkeley, CA, USA, 2012, pp. 2--2.
+  9th USENIX Conference on Networked Systems Design and Implementation}, 2012,
+  pp. 2--2.
 
 \bibitem{coflow}
 M.~Chowdhury and I.~Stoica, ``Coflow:a networking abstraction for cluster
@@ -50,7 +50,7 @@ M.~Chowdhury, Y.~Zhong, and I.~Stoica, ``Efficient coflow scheduling with
 \bibitem{aalo}
 M.~Chowdhury and I.~Stoica, ``Efficient coflow scheduling without prior
   knowledge,'' in \emph{ACM SIGCOMM Computer Communication Review}, vol.~45,
-  no.~4.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2015, pp. 393--406.
+  no.~4, 2015, pp. 393--406.
 
 \bibitem{coda}
 H.~Zhang, L.~Chen, B.~Yi, K.~Chen, M.~Chowdhury, and Y.~Geng, ``Coda: Toward
@@ -71,9 +71,8 @@ H.~Susanto, H.~Jin, K.~Chen \emph{et~al.}, ``Stream: Decentralized
 \bibitem{HUG}
 M.~Chowdhury, Z.~Liu, A.~Ghodsi, and I.~Stoica, ``{HUG}: Multi-resource
   fairness for correlated and elastic demands,'' in \emph{Proc. {USENIX}
-  Symposium on Networked Systems Design and Implementation ({NSDI} 16)}.\hskip
-  1em plus 0.5em minus 0.4em\relax Santa Clara, CA: {USENIX} Association, Mar.
-  2016, pp. 407--424.
+  Symposium on Networked Systems Design and Implementation ({NSDI} 16)}, 2016,
+  pp. 407--424.
 
 \bibitem{DRF}
 A.~Ghodsi, M.~Zaharia, B.~Hindman, A.~Konwinski, S.~Shenker, and I.~Stoica,
@@ -124,8 +123,8 @@ W.~Wang, S.~Ma, B.~Li, and B.~Li, ``Coflex: Navigating the fairness-efficiency
 A.~Singh, J.~Ong, A.~Agarwal, G.~Anderson, A.~Armistead, R.~Bannon, S.~Boving,
   G.~Desai, B.~Felderman, P.~Germano \emph{et~al.}, ``Jupiter rising: A decade
   of clos topologies and centralized control in google's datacenter network,''
-  in \emph{ACM SIGCOMM Computer Communication Review}, vol.~45, no.~4.\hskip
-  1em plus 0.5em minus 0.4em\relax ACM, 2015, pp. 183--197.
+  in \emph{ACM SIGCOMM Computer Communication Review}, vol.~45, no.~4, 2015,
+  pp. 183--197.
 
 \bibitem{coflowsurvey}
 S.~Wang, J.~Zhang, T.~Huang, J.~Liu, T.~Pan, and Y.~Liu, ``A survey of coflow

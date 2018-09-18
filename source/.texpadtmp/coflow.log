@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  25 AUG 2018 00:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  30 AUG 2018 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -219,6 +219,34 @@ File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
 ))
 \Gin@req@height=\dimen135
 \Gin@req@width=\dimen136
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen137
+\captionmargin@=\dimen138
+\captionwidth=\dimen139
+\caption@tempdima=\dimen140
+\caption@indent=\dimen141
+\caption@parindent=\dimen142
+\caption@hangindent=\dimen143
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+\c@KVtest=\count116
+\sf@farskip=\skip50
+\sf@captopadj=\dimen144
+\sf@capskip=\skip51
+\sf@nearskip=\skip52
+\c@subfigure=\count117
+\c@subfigure@save=\count118
+\c@lofdepth=\count119
+\c@subtable=\count120
+\c@subtable@save=\count121
+\c@lotdepth=\count122
+\sf@top=\skip53
+\sf@bottom=\skip54
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -394,82 +422,98 @@ Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 207.
 )
-\c@definition=\count116
+\c@definition=\count123
  (/Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.aux)
 \openout1 = `coflow.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 25.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    ... okay on input line 25.
 
 -- Lines per column: 56 (exact).
-LaTeX Font Info:    Try loading font information for U+msa on input line 31.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 33.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <11> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 53.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 31.
+LaTeX Font Info:    Try loading font information for U+msb on input line 53.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
- [1
+) [1
 
 
 ] [2]
-Underfull \hbox (badness 2735) in paragraph at lines 114--115
+Underfull \hbox (badness 2735) in paragraph at lines 121--122
 []\OT1/ptm/m/n/10 Assume a multi-stage job-$\OML/cmm/m/it/10 m$ \OT1/ptm/m/n/10 has $\OML/cmm/m/it/10 N$ \OT1/ptm/m/n/10 ac-tive coflows,
  []
 
 
-Underfull \hbox (badness 7468) in paragraph at lines 114--115
+Underfull \hbox (badness 7468) in paragraph at lines 121--122
 \OT1/ptm/m/n/10 i.e., $[]$. Given the bot-tle-neck de-mand
  []
 
 [3]
 File: motivative.eps Graphic file (type eps)
  <motivative.eps>
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 196--197
+Overfull \hbox (7.5597pt too wide) in paragraph at lines 204--205
  [][] 
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 203--204
+Underfull \hbox (badness 2913) in paragraph at lines 211--212
 []\OT1/ptm/m/n/10 Assume the ac-tive coflow pri-or-ity queue is $\OML/cmm/m/it/10 F[] \OT1/cmr/m/n/10 =
  []
 
-
-Underfull \hbox (badness 6396) in paragraph at lines 203--204
-\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F[]; [] ; F[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 and the super-coflow queue is $\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 =
- []
-
 [4] [5]
-Underfull \hbox (badness 7504) in paragraph at lines 335--336
-[]\OT1/ptm/m/it/10 Sub-Case 2 \OT1/ptm/m/n/10 The bot-tle-neck port of $\OML/cmm/m/it/10 S[]$ \OT1/ptm/m/it/10 shifts \OT1/ptm/m/n/10 to
+Underfull \hbox (badness 6461) in paragraph at lines 343--344
+[]\OT1/ptm/m/it/10 Sub-Case 2. \OT1/ptm/m/n/10 The bot-tle-neck port of $\OML/cmm/m/it/10 S[]$ \OT1/ptm/m/it/10 shifts \OT1/ptm/m/n/10 to
  []
 
 
-Overfull \hbox (0.50174pt too wide) detected at line 342
+Overfull \hbox (1.26913pt too wide) detected at line 350
 [][]
  []
 
-[6] (/Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 137--140
+[6]
+File: isolation1.eps Graphic file (type eps)
+ <isolation1.eps>
+File: isolation2.eps Graphic file (type eps)
+ <isolation2.eps>
+File: performance3.eps Graphic file (type eps)
+ <performance3.eps>
+File: performance1.eps Graphic file (type eps)
+ <performance1.eps>
+File: performance2.eps Graphic file (type eps)
+ <performance2.eps> [7]
+Underfull \hbox (badness 2173) in paragraph at lines 425--426
+\OT1/ptm/m/n/10 and De-vel-op-ment Pro-gram of China un-der Grant (No.
+ []
+
+(/Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 136--139
 []\OT1/ptm/m/n/8 ``Coflow-benchmark.'' [On-line]. Avail-able:
  []
 
@@ -485,14 +529,14 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] (/Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.aux) ) 
+[8] (/Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.aux) ) 
 Here is how much of TeX's memory you used:
- 4183 strings out of 492650
- 59604 string characters out of 6129649
- 136711 words of memory out of 5000000
- 8011 multiletter control sequences out of 15000+600000
- 39297 words of font info for 104 fonts, out of 8000000 for 9000
+ 4949 strings out of 492650
+ 73643 string characters out of 6129649
+ 151793 words of memory out of 5000000
+ 8769 multiletter control sequences out of 15000+600000
+ 37169 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,12n,35p,1323b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,49p,1167b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.dvi (7 pages, 64976 bytes).
+Output written on /Users/white/Documents/GitHub/ica3pp/source/.texpadtmp/coflow.dvi (8 pages, 72984 bytes).
