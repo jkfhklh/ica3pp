@@ -38,6 +38,12 @@ M.~Zaharia, M.~Chowdhury, T.~Das, A.~Dave, J.~Ma, M.~McCauley, M.~J. Franklin,
   Conference on Networked Systems Design and Implementation}.\hskip 1em plus
   0.5em minus 0.4em\relax {USENIX}, 2012, pp. 15--28.
 
+\bibitem{orchestra}
+M.~Chowdhury, M.~Zaharia, J.~Ma, M.~I. Jordan, and I.~Stoica, ``Managing data
+  transfers in computer clusters with orchestra,'' in \emph{Proceedings of
+  Conference of the ACM Special Interest Group on Data Communication}.\hskip
+  1em plus 0.5em minus 0.4em\relax ACM, 2011, pp. 98--109.
+
 \bibitem{coflow}
 M.~Chowdhury and I.~Stoica, ``Coflow:a networking abstraction for cluster
   applications,'' in \emph{Proceedings of ACM Workshop on Hot Topics in
@@ -115,12 +121,6 @@ M.~Isard, M.~Budiu, Y.~Yu, A.~Birrell, and D.~Fetterly, ``Dryad: distributed
   data-parallel programs from sequential building blocks,'' in
   \emph{Proceedings of ACM SIGOPS/EuroSys Conference on Computer
   Systems}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2007, pp. 59--72.
-
-\bibitem{orchestra}
-M.~Chowdhury, M.~Zaharia, J.~Ma, M.~I. Jordan, and I.~Stoica, ``Managing data
-  transfers in computer clusters with orchestra,'' in \emph{Proceedings of
-  Conference of the ACM Special Interest Group on Data Communication}.\hskip
-  1em plus 0.5em minus 0.4em\relax ACM, 2011, pp. 98--109.
 
 \bibitem{optimizing}
 L.~Chen, W.~Cui, B.~Li, and B.~Li, ``Optimizing coflow completion times with

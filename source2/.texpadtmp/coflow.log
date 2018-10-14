@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  11 OCT 2018 14:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  14 OCT 2018 19:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -471,7 +471,7 @@ Underfull \hbox (badness 3895) in paragraph at lines 121--122
  []
 
 [2]
-Underfull \hbox (badness 7576) in paragraph at lines 129--130
+Underfull \hbox (badness 6445) in paragraph at lines 129--130
 \OT1/ptm/m/it/10 i.e.\OT1/ptm/m/n/10 , $[]$. Given the bot-tle-neck de-mand
  []
 
@@ -532,6 +532,6 @@ Here is how much of TeX's memory you used:
  8770 multiletter control sequences out of 15000+600000
  37169 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,12n,49p,1176b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,49p,1174b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/white/Documents/GitHub/ica3pp/source2/.texpadtmp/coflow.dvi (8 pages, 73592 bytes).
+Output written on /Users/white/Documents/GitHub/ica3pp/source2/.texpadtmp/coflow.dvi (8 pages, 73944 bytes).
