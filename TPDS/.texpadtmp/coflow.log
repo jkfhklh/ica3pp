@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  8 NOV 2018 12:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  29 NOV 2018 17:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -18,10 +18,11 @@ Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 \@IEEEtrantmpcountB=\count81
 \@IEEEtrantmpcountC=\count82
 \@IEEEtrantmptoksA=\toks14
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 503.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
+-- Using IEEE Computer Society mode.
 -- Using 8.5in x 11in (letter) paper.
 -- Using DVI output.
 \@IEEEnormalsizeunitybaselineskip=\dimen105
@@ -29,46 +30,46 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \CLASSINFOnormalsizebaselineskip=\dimen106
 \CLASSINFOnormalsizeunitybaselineskip=\dimen107
 \IEEEnormaljot=\dimen108
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <5.01874> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <5.01874> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7.02625> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <7.02625> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8.03> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <8.03> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9.03374> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9.03374> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9.53561> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9.53561> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <11.04124> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <11.04124> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12.045> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <12.045> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17.06374> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <17.06374> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20.075> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <20.075> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24.09> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24.09> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
 \IEEEquantizedlength=\dimen109
 \IEEEquantizedlengthdiff=\dimen110
 \IEEEquantizedtextheightdiff=\dimen111
@@ -423,73 +424,89 @@ LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 207.
 )
 \c@definition=\count123
- (/Users/white/Documents/GitHub/ica3pp/source2/.texpadtmp/coflow.aux)
+ (/Users/white/Documents/GitHub/ica3pp/TPDS/.texpadtmp/coflow.aux)
 \openout1 = `coflow.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 39.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    ... okay on input line 39.
 
--- Lines per column: 56 (exact).
+-- Lines per column: 61 (exact).
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 37.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 72.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <11> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
-LaTeX Font Info:    Try loading font information for U+msa on input line 60.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 72.
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 72.
+LaTeX Font Info:    Try loading font information for U+msa on input line 72.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 60.
+LaTeX Font Info:    Try loading font information for U+msb on input line 72.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+LaTeX Font Info:    Try loading font information for U+pzd on input line 72.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 72.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 72.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <8.03> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 78.
+LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 78.
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 125.
+ [1
 
 
 ]
-Underfull \hbox (badness 3895) in paragraph at lines 121--122
-[]\OT1/ptm/m/n/10 Specifically, the coflow \OT1/ptm/m/it/10 de-mand vec-tor\OT1/ptm/m/n/10 , say $\OML/cmm/m/it/10 F[] \OT1/cmr/m/n/10 =
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 236.
+
+Underfull \hbox (badness 2753) in paragraph at lines 257--268
+[]\OT1/ppl/m/n/9.53561 Specifically, the coflow \OT1/ppl/m/it/9.53561 de-mand vec-tor\OT1/ppl/m/n/9.53561 , say $\OML/cmm/m/it/10 F[] \OT1/cmr/m/n/10 =
  []
 
 [2]
-Underfull \hbox (badness 6445) in paragraph at lines 129--130
-\OT1/ptm/m/it/10 i.e.\OT1/ptm/m/n/10 , $[]$. Given the bot-tle-neck de-mand
+Underfull \hbox (badness 3108) in paragraph at lines 279--282
+\OT1/ppl/m/it/9.53561 i.e.\OT1/ppl/m/n/9.53561 , $[]$. Given the bot-tle-neck de-mand
  []
 
 [3]
 File: motivative.eps Graphic file (type eps)
  <motivative.eps>
-Overfull \hbox (7.5597pt too wide) in paragraph at lines 213--214
+Overfull \hbox (7.58803pt too wide) in paragraph at lines 452--453
  [][] 
  []
 
 [4] [5]
-Underfull \hbox (badness 6461) in paragraph at lines 352--353
-[]\OT1/ptm/m/it/10 Sub-Case 2. \OT1/ptm/m/n/10 The bot-tle-neck port of $\OML/cmm/m/it/10 S[]$ \OT1/ptm/m/it/10 shifts \OT1/ptm/m/n/10 to
- []
-
-
-Overfull \hbox (1.26913pt too wide) detected at line 359
-[][]
+Underfull \hbox (badness 4013) in paragraph at lines 703--711
+[]\OT1/ppl/m/it/9.53561 Sub-Case 2. \OT1/ppl/m/n/9.53561 The bot-tle-neck port of $\OML/cmm/m/it/10 S[]$ \OT1/ppl/m/it/9.53561 shifts \OT1/ppl/m/n/9.53561 to
  []
 
 [6]
@@ -502,36 +519,27 @@ File: performance3.eps Graphic file (type eps)
 File: performance1.eps Graphic file (type eps)
  <performance1.eps>
 File: performance2.eps Graphic file (type eps)
- <performance2.eps> [7]
-Underfull \hbox (badness 2173) in paragraph at lines 436--437
-\OT1/ptm/m/n/10 and De-vel-op-ment Pro-gram of China un-der Grant (No.
+ <performance2.eps> (/Users/white/Documents/GitHub/ica3pp/TPDS/.texpadtmp/coflow.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
+[]\OT1/ppl/m/n/8.03 ``Apache Hadoop.'' [On-line]. Avail-able:
  []
 
-(/Users/white/Documents/GitHub/ica3pp/source2/.texpadtmp/coflow.bbl
+[7]
+Underfull \vbox (badness 1014) has occurred while \output is active []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 152--155
-[]\OT1/ptm/m/n/8 ``Coflow-benchmark.'' [On-line]. Avail-able:
+[]\OT1/ppl/m/n/8.03 ``Coflow-benchmark.'' [On-line]. Avail-able:
  []
 
-)
-
-** Conference Paper **
-Before submitting the final camera ready copy, remember to:
-
- 1. Manually equalize the lengths of two columns on the last page
- of your paper;
-
- 2. Ensure that any PostScript and/or PDF output post-processing
- uses only Type 1 fonts and that every step in the generation
- process uses the appropriate paper size.
-
-[8] (/Users/white/Documents/GitHub/ica3pp/source2/.texpadtmp/coflow.aux) ) 
+) [8] (/Users/white/Documents/GitHub/ica3pp/TPDS/.texpadtmp/coflow.aux) ) 
 Here is how much of TeX's memory you used:
- 4950 strings out of 492650
- 73654 string characters out of 6129649
- 150793 words of memory out of 5000000
- 8770 multiletter control sequences out of 15000+600000
- 37169 words of font info for 97 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 36i,12n,49p,1174b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 5110 strings out of 492650
+ 76664 string characters out of 6129649
+ 150533 words of memory out of 5000000
+ 8917 multiletter control sequences out of 15000+600000
+ 44295 words of font info for 130 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 36i,11n,49p,901b,395s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/white/Documents/GitHub/ica3pp/source2/.texpadtmp/coflow.dvi (8 pages, 73944 bytes).
+Output written on /Users/white/Documents/GitHub/ica3pp/TPDS/.texpadtmp/coflow.dvi (8 pages, 73784 bytes).
