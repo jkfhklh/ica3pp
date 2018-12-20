@@ -23,7 +23,8 @@
 
 \bibitem{MapReduce}
 J.~Dean and S.~Ghemawat, ``Mapreduce: Simplified data processing on large
-  clusters,'' \emph{Commun. ACM}, vol.~51, no.~7, pp. 107--113, Jan. 2008.
+  clusters,'' \emph{Communications of the ACM}, vol.~51, no.~1, pp. 107--113,
+  2008.
 
 \bibitem{Hadoop}
 \BIBentryALTinterwordspacing
@@ -33,98 +34,113 @@ J.~Dean and S.~Ghemawat, ``Mapreduce: Simplified data processing on large
 \bibitem{Spark}
 M.~Zaharia, M.~Chowdhury, T.~Das, A.~Dave, J.~Ma, M.~McCauley, M.~J. Franklin,
   S.~Shenker, and I.~Stoica, ``Resilient distributed datasets: A fault-tolerant
-  abstraction for in-memory cluster computing,'' in \emph{Proceedings of the
-  9th USENIX Conference on Networked Systems Design and Implementation}, 2012,
-  pp. 2--2.
+  abstraction for in-memory cluster computing,'' in \emph{Proceedings of USENIX
+  Conference on Networked Systems Design and Implementation}.\hskip 1em plus
+  0.5em minus 0.4em\relax {USENIX}, 2012, pp. 15--28.
+
+\bibitem{orchestra}
+M.~Chowdhury, M.~Zaharia, J.~Ma, M.~I. Jordan, and I.~Stoica, ``Managing data
+  transfers in computer clusters with orchestra,'' in \emph{Proceedings of
+  Conference of the ACM Special Interest Group on Data Communication}.\hskip
+  1em plus 0.5em minus 0.4em\relax ACM, 2011, pp. 98--109.
 
 \bibitem{coflow}
 M.~Chowdhury and I.~Stoica, ``Coflow:a networking abstraction for cluster
-  applications,'' in \emph{ACM Workshop on Hot Topics in Networks}, 2012, pp.
-  31--36.
+  applications,'' in \emph{Proceedings of ACM Workshop on Hot Topics in
+  Networks}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2012, pp. 31--36.
 
 \bibitem{varys}
 M.~Chowdhury, Y.~Zhong, and I.~Stoica, ``Efficient coflow scheduling with
-  varys,'' in \emph{ACM SIGCOMM Computer Communication Review}, vol.~44, no.~4,
-  2014, pp. 443--454.
+  varys,'' in \emph{Proceedings of Conference of the ACM Special Interest Group
+  on Data Communication}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2014, pp.
+  443--454.
 
 \bibitem{aalo}
 M.~Chowdhury and I.~Stoica, ``Efficient coflow scheduling without prior
-  knowledge,'' in \emph{ACM SIGCOMM Computer Communication Review}, vol.~45,
-  no.~4, 2015, pp. 393--406.
+  knowledge,'' in \emph{Proceedings of Conference of the ACM Special Interest
+  Group on Data Communication}.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
+  2015, pp. 393--406.
 
 \bibitem{coda}
 H.~Zhang, L.~Chen, B.~Yi, K.~Chen, M.~Chowdhury, and Y.~Geng, ``Coda: Toward
   automatically identifying and scheduling coflows in the dark,'' in
-  \emph{Proceedings of the 2016 ACM SIGCOMM Conference}, 2016, pp. 160--173.
+  \emph{Proceedings of Conference of the ACM Special Interest Group on Data
+  Communication}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2016, pp.
+  160--173.
 
 \bibitem{barrat}
 F.~R. Dogar, T.~Karagiannis, H.~Ballani, and A.~Rowstron, ``Decentralized
-  task-aware scheduling for data center networks,'' in \emph{ACM SIGCOMM
-  Computer Communication Review}, vol.~44, no.~4, 2014, pp. 431--442.
+  task-aware scheduling for data center networks,'' in \emph{Proceedings of
+  Conference of the ACM Special Interest Group on Data Communication}.\hskip
+  1em plus 0.5em minus 0.4em\relax ACM, 2014, pp. 431--442.
 
 \bibitem{stream}
 H.~Susanto, H.~Jin, K.~Chen \emph{et~al.}, ``Stream: Decentralized
   opportunistic inter-coflow scheduling for datacenter networks,'' in
-  \emph{2016 IEEE 24th International Conference on Network Protocols (ICNP)},
-  2016, pp. 1--10.
+  \emph{Proceedings of IEEE International Conference on Network
+  Protocols}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2016, pp. 1--10.
 
 \bibitem{HUG}
 M.~Chowdhury, Z.~Liu, A.~Ghodsi, and I.~Stoica, ``{HUG}: Multi-resource
-  fairness for correlated and elastic demands,'' in \emph{Proc. {USENIX}
-  Symposium on Networked Systems Design and Implementation ({NSDI} 16)}, 2016,
-  pp. 407--424.
+  fairness for correlated and elastic demands,'' in \emph{Proceedings of USENIX
+  Conference on Networked Systems Design and Implementation}.\hskip 1em plus
+  0.5em minus 0.4em\relax {USENIX}, 2016, pp. 407--424.
 
 \bibitem{DRF}
 A.~Ghodsi, M.~Zaharia, B.~Hindman, A.~Konwinski, S.~Shenker, and I.~Stoica,
-  ``Dominant resource fairness: Fair allocation of multiple resource types.''
-  in \emph{Nsdi}, vol.~11, no. 2011, 2011, pp. 24--24.
+  ``Dominant resource fairness: Fair allocation of multiple resource types,''
+  in \emph{Proceedings of USENIX Conference on Networked Systems Design and
+  Implementation}.\hskip 1em plus 0.5em minus 0.4em\relax USENIX, 2011, pp.
+  323--336.
 
 \bibitem{faircloud}
 L.~Popa, G.~Kumar, M.~Chowdhury, A.~Krishnamurthy, S.~Ratnasamy, and I.~Stoica,
-  ``Faircloud: sharing the network in cloud computing,'' \emph{ACM SIGCOMM
-  Computer Communication Review}, vol.~42, no.~4, pp. 187--198, 2012.
+  ``Faircloud: sharing the network in cloud computing,'' in \emph{Proceedings
+  of Conference of the ACM Special Interest Group on Data Communication}.\hskip
+  1em plus 0.5em minus 0.4em\relax ACM, 2012, pp. 187--198.
 
 \bibitem{fair}
 L.~Wang and W.~Wang, ``Fair coflow scheduling without prior knowledge,'' in
-  \emph{2018 IEEE 38th International Conference on Distributed Computing
-  Systems (ICDCS)}, 2018.
+  \emph{Proceedings of IEEE Conference on Distributed Computing Systems}.\hskip
+  1em plus 0.5em minus 0.4em\relax IEEE, 2018, pp. 22--32.
 
 \bibitem{bingchuan}
 B.~Tian, C.~Tian, H.~Dai, and B.~Wang, ``Scheduling coflows of multi-stage jobs
-  to minimize the total weighted job completion time,'' in \emph{INFOCOM
-  2018-IEEE Conference on Computer Communications, IEEE}, 2018.
+  to minimize the total weighted job completion time,'' in \emph{Proceedings of
+  IEEE International Conference on Computer Communications}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2018.
 
 \bibitem{utopia}
 B.~Li, L.~Wang, and W.~Wang, ``Utopia: Near-optimal coflow scheduling with
-  isolation guarantee,'' in \emph{INFOCOM 2018-IEEE Conference on Computer
-  Communications, IEEE}, 2018.
+  isolation guarantee,'' in \emph{Proceedings of IEEE International Conference
+  on Computer Communications}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2018.
 
 \bibitem{dryad}
 M.~Isard, M.~Budiu, Y.~Yu, A.~Birrell, and D.~Fetterly, ``Dryad: distributed
-  data-parallel programs from sequential building blocks,'' in \emph{ACM SIGOPS
-  operating systems review}, vol.~41, no.~3, 2007, pp. 59--72.
-
-\bibitem{orchestra}
-M.~Chowdhury, M.~Zaharia, J.~Ma, M.~I. Jordan, and I.~Stoica, ``Managing data
-  transfers in computer clusters with orchestra,'' \emph{ACM SIGCOMM Computer
-  Communication Review}, vol.~41, no.~4, pp. 98--109, 2011.
+  data-parallel programs from sequential building blocks,'' in
+  \emph{Proceedings of ACM SIGOPS/EuroSys Conference on Computer
+  Systems}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2007, pp. 59--72.
 
 \bibitem{optimizing}
 L.~Chen, W.~Cui, B.~Li, and B.~Li, ``Optimizing coflow completion times with
-  utility max-min fairness,'' in \emph{INFOCOM 2016-The 35th Annual IEEE
-  International Conference on Computer Communications, IEEE}, 2016, pp. 1--9.
+  utility max-min fairness,'' in \emph{Proceedings of IEEE International
+  Conference on Computer Communications}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2016, pp. 1--9.
 
 \bibitem{coflex}
 W.~Wang, S.~Ma, B.~Li, and B.~Li, ``Coflex: Navigating the fairness-efficiency
-  tradeoff for coflow scheduling,'' in \emph{INFOCOM 2017-IEEE Conference on
-  Computer Communications, IEEE}, 2017, pp. 1--9.
+  tradeoff for coflow scheduling,'' in \emph{Proceedings of IEEE International
+  Conference on Computer Communications}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2017, pp. 1--9.
 
 \bibitem{jupiter}
 A.~Singh, J.~Ong, A.~Agarwal, G.~Anderson, A.~Armistead, R.~Bannon, S.~Boving,
   G.~Desai, B.~Felderman, P.~Germano \emph{et~al.}, ``Jupiter rising: A decade
   of clos topologies and centralized control in google's datacenter network,''
-  in \emph{ACM SIGCOMM Computer Communication Review}, vol.~45, no.~4, 2015,
-  pp. 183--197.
+  in \emph{Proceedings of Conference of the ACM Special Interest Group on Data
+  Communication}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2015, pp.
+  183--197.
 
 \bibitem{coflowsurvey}
 S.~Wang, J.~Zhang, T.~Huang, J.~Liu, T.~Pan, and Y.~Liu, ``A survey of coflow
@@ -139,8 +155,7 @@ S.~Wang, J.~Zhang, T.~Huang, J.~Liu, T.~Pan, and Y.~Liu, ``A survey of coflow
 
 \bibitem{minimizing}
 Z.~Qiu, C.~Stein, and Y.~Zhong, ``Minimizing the total weighted completion time
-  of coflows in datacenter networks,'' in \emph{Proceedings of the 27th ACM
-  symposium on Parallelism in Algorithms and Architectures}, 2015, pp.
-  294--303.
+  of coflows in datacenter networks,'' in \emph{Proceedings of ACM symposium on
+  Parallelism in Algorithms and Architectures}, 2015, pp. 294--303.
 
 \end{thebibliography}
