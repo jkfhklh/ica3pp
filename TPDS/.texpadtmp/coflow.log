@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  21 DEC 2018 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.5.3)  21 DEC 2018 15:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -536,11 +536,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--155
 File: bingchuan.eps Graphic file (type eps)
  <bingchuan.eps>
 File: bingchuan.eps Graphic file (type eps)
+ <bingchuan.eps> [8]
+File: bingchuan.eps Graphic file (type eps)
+ <bingchuan.eps>
+File: bingchuan.eps Graphic file (type eps)
  <bingchuan.eps>
 File: wajid.eps Graphic file (type eps)
  <wajid.eps>
 File: wajid.eps Graphic file (type eps)
- <wajid.eps> [8] (/Users/white/Documents/GitHub/ica3pp/TPDS/.texpadtmp/coflow.aux) ) 
+ <wajid.eps> [9
+
+] (/Users/white/Documents/GitHub/ica3pp/TPDS/.texpadtmp/coflow.aux) ) 
 Here is how much of TeX's memory you used:
  5116 strings out of 492650
  76756 string characters out of 6129649
@@ -548,6 +554,6 @@ Here is how much of TeX's memory you used:
  8921 multiletter control sequences out of 15000+600000
  44295 words of font info for 130 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 36i,11n,49p,25288b,395s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,11n,49p,25285b,395s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/white/Documents/GitHub/ica3pp/TPDS/.texpadtmp/coflow.dvi (8 pages, 75132 bytes).
+Output written on /Users/white/Documents/GitHub/ica3pp/TPDS/.texpadtmp/coflow.dvi (9 pages, 77068 bytes).
